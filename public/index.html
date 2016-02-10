@@ -1,0 +1,22 @@
+<!DOCTYPE "html">
+<html>
+	<head>
+		<title>
+			Do-nothing Robot
+		</title>
+	</head>
+	<body>
+        <button onclick="on();">&#9728;</button>
+        <button onclick="of();">&#9702;</button>
+	</body>
+	
+	<script type="text/javascript">
+		var socket = new WebSocket('ws://192.168.1.103:3000'),
+            on = function () {
+                socket.send('on');
+            },
+            off = function () {
+                socket.send('off');
+            };
+	</script>
+</html>
